@@ -1,0 +1,88 @@
+body { 
+    margin: 0;
+    width: 99%;
+    height: 99vh;
+    background-image: linear-gradient(to bottom, rgb(61, 61, 61), rgb(27, 9, 49), rgb(0, 0, 0));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+form { 
+    height: 400px;
+    width: 300px;
+    background-color: rgba(255, 255, 255, 0.01);
+    border-radius: 30px;
+    box-shadow: 1px 1px 10px 10px rgb(24, 9, 45);
+}
+
+label { 
+    border: 2px solid red;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: aliceblue;
+}
+
+h1 { 
+    text-align: center;
+    color: aliceblue;
+}
+
+select { 
+    border-radius: 30px;
+    color: rgba(54, 10, 72, 1);
+    background-color: blueviolet;
+    opacity: 0.1;
+}
+
+.btn { 
+    border: none;
+    color: aliceblue;
+    border-radius: 5px;
+    background-color: black;
+    transition: ease-out 0.3s;
+    font-size: 1rem;
+    outline: none;
+    border: 1px solid rgb(88, 92, 96);
+    position: relative;
+    z-index: 1;
+    padding: 10px;
+}
+
+.btn:before { 
+    transition: 0.5s all ease;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    right: 50%;
+    bottom: 0;
+    opacity: 0;
+    background-color: rgb(32, 12, 39);
+}
+
+.btn:hover:before {
+    transition: 0.5s all ease;
+    left: 0;
+    right: 0;
+    opacity: 1;
+}
+
+div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(218, 218, 218);
+    border: 1px solid rgb(163, 163, 163);
+    padding: 9px;
+    border-radius: 5px;
+    padding-left: 5px;
+    padding-right: 10px;
+}
