@@ -4,20 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='stylesheet' href='/stylesheets/stylesheet.css' />
+    <link rel='stylesheet' href='/stylesheets/show.css' />
     <title>Document</title>
 </head>
 <body>
     <section>
-        <div><h1>Welcome to express flights</h1></div>
-        <div>Airline: <%= flights.airline %> </div>
-        <div>Airport: <%= flights.airport %> </div>
-        <div> Flight Number: <%= flights.flightNo %> </div>
-        <div>Departs: <%= flights.departs %> </div>
+        <div id="tittle"><h1 id="title"> Welcome to express flights  </h1></div>
+        <span class="flights-container">
+            <div>Airline: <%= flights.airline %> </div>
+            <div>Airport: <%= flights.airport %> </div>
+            <div> Flight Number: <%= flights.flightNo %> </div>
+            <div>Departs: <%= flights.departs %> </div>
+        </span>
     </section>
     <form action="/flights/<%= flights.id %>/destinations " method="POST">
-        <h1>Destination</h1>
-    <label>
+        <h1 id="destination">Destination</h1>
+    <label class="airport">
         Airport: 
         <select name="airport">
             <option value="">Select airline</option>
@@ -28,26 +30,26 @@
             <option value="SAN">SAN</option>
         </select>
     </label><br>
-    <label> Arrival:
-        <input type="Date" name="arrival">
+    <label class="airport"> Arrival:
+        <input type="Date" name="arrival" class="date">
     </label><br>
-    <input type="submit" value="Add Destination">
+    <input type="submit" value="Add Destination" class="Add-distination">
     </form>
     <table>
         <thead>
             <tr>
-                <th>airline</th>
-                <th>Date</th>
+                <th>Airline</th>
+                <th id="date-title">Date</th>
             </tr>
         </thead>
     </table>
     <tbody>
 
         <% flights.destinations.forEach( function(f) { %> 
-            <tr>
-                <td><%= f.createdAt.toLocaleDateString() %> </td>
-                <td><%= f.airport %> </td>
-                <td><%= f.arrival.toLocaleDateString() %> </td>
+            <tr class="flight-container">
+                <td class="flight"><%= f.createdAt.toLocaleDateString() %> </td>
+                <td class="flight"><%= f.airport %> </td>
+                <td class="flight"><%= f.arrival.toLocaleDateString() %> </td>
             </tr>
             <% }) %> 
     </tbody>
