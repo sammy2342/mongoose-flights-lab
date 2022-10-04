@@ -42,11 +42,12 @@
         </thead>
     </table>
     <tbody>
+
         <% flights.destinations.forEach( function(f) { %> 
             <tr>
                 <td><%= f.createdAt.toLocaleDateString() %> </td>
                 <td><%= f.airport %> </td>
-                <td><%= f.arrival %> </td>
+                <td><%= f.arrival.toLocaleDateString() %> </td>
             </tr>
             <% }) %> 
     </tbody>
