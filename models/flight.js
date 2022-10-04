@@ -33,7 +33,7 @@ const flightSchema = new Schema({
         // this mean 365 days = 365*24*60*60000 = 365 * 24 hours * 60 minutes * 60 seconds * 1000 milliseconds
         default: () => Date.now() + 365*24*60*600000
     },
-    destinations: [destinationSchema]
+    destinations: [destinationSchema], 
 }, {
     timestamps: true
 })
