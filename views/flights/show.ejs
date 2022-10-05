@@ -11,11 +11,19 @@
     <section>
         <div id="tittle"><h1 id="title"> Welcome to express flights  </h1></div>
         <span class="flights-container">
+            <div>Details</div>
             <div>Airline: <%= flights.airline %> </div>
             <div>Airport: <%= flights.airport %> </div>
             <div> Flight Number: <%= flights.flightNo %> </div>
             <div>Departs: <%= flights.departs %> </div>
         </span>
+        <!-- not sure why is this not working -->
+        <div>Ticket:</div>
+        <ul>
+          <%- ticket.map(f => 
+            `<li>${f.seat} <small>${f.price}</small></li>`
+          ).join('') %>
+        </ul>
     </section>
     <form action="/flights/<%= flights.id %>/destinations " method="POST">
         <h1 id="destination">Destination</h1>
@@ -53,6 +61,19 @@
             </tr>
             <% }) %> 
     </tbody>
+
+
+    <form action="/flights/<%= flights._id %>/tickets" method="POST">
+        <br>
+        <br>
+        <br>
+        <select name="ticketId">
+          <%- ticket.map(t => 
+            `<option value="${t._id}">${t.seat}</option>`
+          ).join('') %>
+        </select>
+        <button type="submit">Add to Seat</button>
+      </form>
 
 </body>
 </html>

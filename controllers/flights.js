@@ -25,7 +25,7 @@ function create(req, res) {
     const flight = new Flight(req.body)
     flight.save( function(err) {
         if(err) return res.redirect('/flights/new')
-        console.log(flight)
+        // console.log(flight)
         // red direct down acts like a refersh page I think 
         res.redirect('/flights/new')
     })
@@ -42,8 +42,11 @@ function index(req, res) {
 
 function show(req, res) { 
     Flight.findById(req.params.id, function(err, flights) { 
-        res.render('flights/show', {
-            flights: flights
+        Ticket.find({flights: flights._id}, function(err, ticket) {
+            res.render('flights/show', {
+                flights: flights, 
+                ticket: ticket
+            })
         })
     })
 }
