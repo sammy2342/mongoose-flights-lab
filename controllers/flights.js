@@ -40,6 +40,13 @@ function index(req, res) {
     })
 }
 
+// async function list(req, res) { 
+//     const flights = await Flight.find({})
+//     res.render('flights/index', {
+//         flights,
+//     })
+// }
+
 function show(req, res) { 
     Flight.findById(req.params.id, function(err, flights) { 
         Ticket.find({flights: flights._id}, function(err, ticket) {
@@ -50,3 +57,12 @@ function show(req, res) {
         })
     })
 }
+
+// async function show1(req, res) {
+//     const flight = await Flight.findById(req.params.id)
+//     const tickets = await Ticket.find({flight: flight._id})
+//     res.render('flights/show', { 
+//         flight,
+//         tickets,
+//     })
+// }

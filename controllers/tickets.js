@@ -17,7 +17,9 @@ function newTicket(req, res) {
 
 function create(req, res) { 
     const t = req.body.seat
+    console.log(req.body)
     Ticket.create(req.body, function(err, tickets) {
+        console.log(err)
         res.redirect('/tickets/new')
     })
 }

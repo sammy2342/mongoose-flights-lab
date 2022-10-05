@@ -67,11 +67,8 @@
         <br>
         <br>
         <br>
-        <select name="ticketId">
-          <%- ticket.map(t => 
-            `<option value="${t._id}">${t.seat}</option>`
-          ).join('') %>
-        </select>
+        <input name="seat" required pattern="[A-F][1-9]\d?">
+
         <button type="submit">Add to Seat</button>
       </form>
 
