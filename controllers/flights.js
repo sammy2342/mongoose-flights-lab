@@ -50,9 +50,11 @@ function index(req, res) {
 function show(req, res) { 
     Flight.findById(req.params.id, function(err, flights) { 
         Ticket.find({flights: flights._id}, function(err, ticket) {
+            // console.log(ticket, 'THID IS THE TICKET')
             res.render('flights/show', {
                 flights: flights, 
-                ticket: ticket
+                ticket: ticket,
+                id: null
             })
         })
     })

@@ -17,21 +17,25 @@ function newTicket(req, res) {
 
 function create(req, res) { 
     const t = req.body.seat
-    console.log(req.body)
+    // console.log(req.body)
     Ticket.create(req.body, function(err, tickets) {
-        console.log(err)
+        // console.log(err)
         res.redirect('/tickets/new')
     })
 }
 
 function addTicket(req, res) { 
-    // console.log(req.params.id)
-    // console.log(req.body, 'THis is a console.log')
-    Flight.findById(req.params.id, function(err, flight) { 
+    console.log(req.params.id, 'rhlksmbhlkmsdlkm')
+    // console.log(req.body.seat, 'THis is a console.log')
+    Ticket.find({'flight.$id':  req.params.id},function(err, flight) { 
+        console.log(flight, 'THis a console.og for the ticket')
+        
+        
         // console.log(flight)
-        flight.flight.push(req.body.ticketId)
-        flight.save( function(err) {
-            res.redirect(`/flights/${flight._id}`)
-        })
+        // console.log(req.body.ticketId)
+        // flight.save( function(err) {
+        //     res.redirect(`/flights/${flight._id}`, {id: req.body.seat})
+        // })
+        res.redirect(`/flights/${req.params.id}`)
     })
 }

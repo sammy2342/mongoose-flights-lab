@@ -20,9 +20,7 @@
         <!-- not sure why is this not working -->
         <div>Ticket:</div>
         <ul>
-          <%- ticket.map(f => 
-            `<li>${f.seat} <small>${f.price}</small></li>`
-          ).join('') %>
+          <li><%= ticket[ticket.length - 1].seat %></li>
         </ul>
     </section>
     <form action="/flights/<%= flights.id %>/destinations " method="POST">
