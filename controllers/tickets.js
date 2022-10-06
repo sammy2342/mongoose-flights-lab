@@ -27,9 +27,10 @@ function create(req, res) {
 function addTicket(req, res) { 
     console.log(req.params.id, 'rhlksmbhlkmsdlkm')
     // console.log(req.body.seat, 'THis is a console.log')
-    Ticket.find({'flight.$id':  req.params.id},function(err, flight) { 
-        console.log(flight, 'THis a console.og for the ticket')
-        
+    Ticket.find({},
+    function(err, flight) { 
+        // console.log(flight, 'THis a console.og for the ticket')
+        const i = req.body.seat
         
         // console.log(flight)
         // console.log(req.body.ticketId)
